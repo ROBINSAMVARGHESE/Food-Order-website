@@ -3,7 +3,7 @@ import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
-import { toast } from 'react-hot-toast'; 
+
 
 const LoginPopup = ({ setShowLogin }) => {
     const { url, setToken } = useContext(StoreContext);
@@ -30,7 +30,7 @@ const LoginPopup = ({ setShowLogin }) => {
             newUrl += "/api/user/login";
         }
 
-         {
+        {
             const response = await axios.post(newUrl, data);
             if (response.data.success) {
                 setToken(response.data.token);
@@ -39,7 +39,7 @@ const LoginPopup = ({ setShowLogin }) => {
             } else {
                 alert(response.data.message);
             }
-        } 
+        }
     };
 
     return (
