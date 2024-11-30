@@ -1,0 +1,52 @@
+/* Center the table container */
+.list-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    min-height: 100vh; /* Full height for centering vertically */
+    padding: 20px;
+    background-color: #f5f5f5; /* Light background for contrast */
+  }
+  
+  /* Restrict table width and center it */
+  .list-table {
+    width: 80%; /* Medium size - adjust percentage if needed */
+    max-width: 600px; /* Ensure the table doesn't grow too large */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent overflowing content */
+  }
+  
+  /* Table rows with proper formatting */
+  .list-table-format {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 1px solid #cacaca;
+    font-size: 13px;
+  }
+  
+  .list-table-format.title {
+    background-color: #f9f9f9;
+    font-weight: bold;
+  }
+  
+ 
+  .list-table-format img {
+    width: 50px;
+  }
+  
+  
+
+/* @media (max-width:600px) {
+    .list-table-format{
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 15px;
+    }
+    .list-table-format.title{
+        display: none;
+    }
+} */

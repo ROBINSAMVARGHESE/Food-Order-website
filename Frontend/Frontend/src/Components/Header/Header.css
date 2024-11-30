@@ -1,0 +1,71 @@
+/* Header Section */
+.header {
+  position: relative;
+  padding: 16px;
+  bottom: -20px;
+  margin-top: 30px;
+}
+
+/* Carousel Styling */
+.carousel-item {
+  height: 400px; /* Adjust height of each slide */
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}
+
+.carousel-item img {
+  object-fit: cover; /* Ensure the images cover the container area */
+  height: 100%; /* Ensure the image fills the slide vertically */
+  width: 100%; /* Ensure the image spans the entire width */
+}
+
+/* Header Contents */
+.header-contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color:white;
+  padding: 0 15px; /* Optional: Add padding for better responsiveness */
+}
+
+.header-contents h3 {
+  font-size: 2rem;
+  margin-bottom: 15px; /* Reduced spacing */
+}
+
+.header-contents p {
+  font-size: 1rem;
+  margin-bottom: 15px; /* Reduced spacing */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button Styling */
+.header-contents button {
+  padding: 8px 16px; /* Reduced padding to make the button smaller */
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff7043;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto; /* Keep width flexible, but compact */
+  max-width: 200px; /* Set a maximum width to prevent stretching */
+}
+
+.header-contents button:hover {
+  background-color: #ff5722;
+}
+
+/* Optional: Limit button width to prevent it from being too long */
+.header-contents button {
+  width: auto;
+  max-width: 200px; /* Set a max-width for a more compact button */
+}
+
+
