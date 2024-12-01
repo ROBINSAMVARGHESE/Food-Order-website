@@ -12,7 +12,7 @@ const App = () => {
     toast.success('Welcome to the Tasty-Kart Admin Panel!');
   };
 
-  const url = "http://localhost:7000";
+  const url = "https://food-order-website-mzss.onrender.com";
 
   React.useEffect(() => {
     showWelcomeToast(); 
