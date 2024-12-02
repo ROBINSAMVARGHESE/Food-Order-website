@@ -16,7 +16,7 @@ const port = process.env.PORT || 7000;
 
 // Middleware
 app.use(express.json());
-app.use(cors({origin:"https://food-order-website-nu.vercel.app",credentials:true}));
+app.use(cors({origin:"https://food-order-website-fe.onrender.com",credentials:true}));
 
 // DB Connection
 connectDB();
