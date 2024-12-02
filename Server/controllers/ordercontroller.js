@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Place Order Function
 const placeOrder = async (req, res) => {
-  const frontend_url = "https://food-order-website-nu.vercel.app";
+  const frontend_url = "https://foodorderwebsite-fe.onrender.com";
 
   try {
     // Save new order
