@@ -5,10 +5,14 @@ import { assets } from '../../assets/assets'
 const AppDownload = () => {
   return (
     <div className='app-download' id='app-download'>
-      <p>For Better Exprience,Download<br/>Tasty Kart</p>
+      <p>For Better Exprience,Download<br />Tasty Kart</p>
       <div className="app-download-platforms">
-        <img src={assets.play_store} alt="" />
-        <img src={assets.app_store} alt="" />
+        <a href="/play-store">
+          <img src={assets.play_store} alt="Play Store" />
+        </a>
+        <a href="/app-store">
+          <img src={assets.app_store} alt="App Store" />
+        </a>
       </div>
     </div>
   )
