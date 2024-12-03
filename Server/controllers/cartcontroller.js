@@ -12,7 +12,7 @@ const addToCart = async (req, res) => {
       } else {
         cartData[req.body.itemId] += 1;
       }
-      await usermodel.findByIdAndUpdate(req.body.userId, { cartData });
+      await userModel.findByIdAndUpdate(req.body.userId, { cartData });
       res.json({ success: true, message: "Added to Cart" });
     } catch (error) {
       console.log(error);
@@ -30,7 +30,7 @@ const addToCart = async (req, res) => {
       } else {
         delete cartData[req.body.itemId];
       }
-      await usermodel.findByIdAndUpdate(req.body.userId, { cartData });
+      await userModel.findByIdAndUpdate(req.body.userId, { cartData });
       res.json({ success: true, message: "Removed from Cart" });
     } catch (error) {
       console.log(error);
