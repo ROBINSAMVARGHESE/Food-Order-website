@@ -18,10 +18,8 @@ const placeOrder = async (req, res) => {
     });
     await newOrder.save();
 
-    // Clear user's cart after placing the order
     await usermodel.findByIdAndUpdate(req.body.userId, { cartData: {} });
 
-    // Prepare Stripe line items
     const line_items = req.body.items.map((item) => ({
       price_data: {
         currency: "INR",
