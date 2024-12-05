@@ -27,11 +27,19 @@ const Verify = () => {
                 { success, orderId },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
+            
+            
             if (response.data.success) {
+                console.log( "success" , response.data);
                 navigate("/myorders");
-            } else {
+            } else { 
+                console.log( "fail" , response.data);
+                
                 setError("Payment verification failed. Redirecting to home.");
+                
                 navigate("/");
+
+                
             }
         } catch (err) {
             setError("An error occurred during payment verification.");
@@ -41,6 +49,8 @@ const Verify = () => {
     };
 
     useEffect(() => {
+        console.log("calling for verfiy");
+        
         verifyPayment();
     }, []);
 
