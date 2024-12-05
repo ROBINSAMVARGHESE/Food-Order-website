@@ -4,6 +4,10 @@ import profile_image from './profile_image.png'
 import upload_area from './upload_area.png'
 import parcel_icon from './parcel_icon.png'
 
+
+// Backend Base URL
+const url = "https://food-order-website-mzss.onrender.com";
+
 export const assets ={
     add_icon,
     order_icon,
