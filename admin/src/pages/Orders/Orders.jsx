@@ -44,7 +44,7 @@ const Orders = ({ url }) => {
 
   useEffect(() => {
     fetchAllOrder();
-  }, [url]); // Adding 'url' to dependencies
+  }, [url]);
 
   return (
     <div className="order add">

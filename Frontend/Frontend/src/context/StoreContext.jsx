@@ -10,10 +10,10 @@ const StoreContextProvider = ({ children }) => {
     const [token, setToken] = useState("");
 
     // Backend Base URL
+    
     // const url = "https://food-order-website-mzss.onrender.com";
     const url = import.meta.env.VITE_URL;
     console.log(url);
-    
 
     // Add to Cart
     const addToCart = async (itemId) => {
