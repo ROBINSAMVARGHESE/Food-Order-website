@@ -4,7 +4,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import { Route, Routes } from 'react-router-dom';
 import Add from './pages/Add/Add';
 import List from './pages/List/List';
-import Orders from './pages/orders/Orders'; 
+import Orders from './pages/Orders/Orders'; 
 import { Toaster, toast } from 'react-hot-toast';
 
 const App = () => {
