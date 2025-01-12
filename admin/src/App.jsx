@@ -12,17 +12,24 @@ const url = import.meta.env.VITE_URL;
 console.log(url);
 
 const App = () => {
+  const [token, setToken] = useState(''); 
+
+  // Show welcome toast message
   const showWelcomeToast = () => {
     toast.success('Welcome to the Tasty-Kart Admin Panel!');
   };
 
-
-
-  const [token, setToken] = useState('');
+  // Logout handler to clear token
+  const logoutHandler = () => {
+    setToken(''); // Clear the token
+    toast.success('Logged out successfully!'); 
+  };
 
   useEffect(() => {
-    showWelcomeToast();
-  }, []);
+    if (token !== '') {
+      showWelcomeToast(); 
+    }
+  }, [token]);
 
   return (
     <div className='bg-gray-50 min-h-screen'>
@@ -30,7 +37,8 @@ const App = () => {
         <Login setToken={setToken} />
       ) : (
         <>
-          <Navbar />
+          {/* Pass logoutHandler to Navbar */}
+          <Navbar logoutHandler={logoutHandler} />
           <Toaster position="top-right" reverseOrder={false} />
           <hr />
           <div className="app-content" style={{ display: 'flex' }}>
@@ -50,3 +58,4 @@ const App = () => {
 };
 
 export default App;
+

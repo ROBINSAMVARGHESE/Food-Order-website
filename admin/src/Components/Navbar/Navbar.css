@@ -1,17 +1,24 @@
 /* Navbar container styling */
+.navbar-container {
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+  padding: 1rem 0; /* Vertical padding for spacing */
+}
+
+/* Navbar main layout */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 2rem; /* Horizontal padding */
   color: orangered; /* Text color for titles */
-  
 }
 
 /* Navbar title and subtitle container */
 .navbar-title-container {
   display: flex;
   flex-direction: column;
+  gap: 0.2rem; /* Spacing between title and subtitle */
 }
 
 /* Navbar main title styling */
@@ -19,6 +26,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+  color: orangered; /* Primary color for the title */
 }
 
 /* Navbar subtitle styling */
@@ -26,11 +34,18 @@
   font-size: 0.9rem;
   font-weight: 300;
   margin: 0;
-  color: #cccccc; /* Light gray for the subtitle */
+  color: #665c5c; /* Light gray for the subtitle */
+}
+
+/* Right section (button and profile image) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between button and profile image */
 }
 
 /* Button styling */
-button {
+.logout-button {
   font-family: inherit;
   background-color: #4a5568; /* Gray button background */
   color: #ffffff; /* White text */
@@ -43,16 +58,17 @@ button {
 }
 
 /* Button hover state */
-button:hover {
+.logout-button:hover {
   background-color: #2d3748; /* Darker gray on hover */
 }
 
-/* Profile image styling (if used) */
-.profile {
+/* Profile image styling */
+.profile-image {
   width: 40px;
   height: 40px;
   border-radius: 50%; /* Circular image */
   object-fit: cover; /* Ensure the image fits well */
-  margin-left: 1rem;
+  border: 2px solid #e5e7eb; /* Border around the profile image */
   cursor: pointer;
 }
+

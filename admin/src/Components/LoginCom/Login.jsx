@@ -7,21 +7,13 @@ const Login = ({ setToken }) => {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const url = import.meta.env.VITE_URL; 
+    const url = import.meta.env.VITE_URL;
 
     const onSubmithandler = async (e) => {
-        e.preventDefault(); 
-
-        setLoading(true); 
+        e.preventDefault();
+        setLoading(true);
         try {
-            console.log('Sending request to:', `${url}/api/user/admin/register`);
-            console.log(url);
-            
-            console.log('Request payload:', { email, password });
-
             const response = await axios.post(`${url}/api/user/admin/register`, { email, password });
-
-            console.log('Response:', response);
 
             if (response.status === 200) {
                 const { token } = response.data;
@@ -31,10 +23,9 @@ const Login = ({ setToken }) => {
                 alert('Login failed. Please check your credentials.');
             }
         } catch (error) {
-            console.error('Error:', error);
             alert(error.response?.data?.message || 'An error occurred. Please try again.');
         } finally {
-            setLoading(false); 
+            setLoading(false);
         }
     };
 
