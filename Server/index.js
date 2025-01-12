@@ -18,7 +18,7 @@ const port = process.env.PORT || 7000;
 app.use(express.json());
 app.use(
     cors({
-        origin: ["https://food-order-website-fe.onrender.com","http://localhost:5173","https://food-order-website-admin-bpwz.onrender.com"] ,
+        origin: ["https://food-order-website-fe.onrender.com","http://localhost:5173","https://food-order-website-admin-bpwz.onrender.com"],
         credentials: true,
         methods: ["GET","POST","PUT","DELETE","OPTION"]
     })

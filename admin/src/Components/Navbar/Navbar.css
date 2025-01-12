@@ -1,32 +1,58 @@
+/* Navbar container styling */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: orangered; /* Text color for titles */
+  
 }
 
+/* Navbar title and subtitle container */
 .navbar-title-container {
-    display: flex;
-    flex-direction: column;
-    /* Aligns text vertically */
+  display: flex;
+  flex-direction: column;
 }
 
+/* Navbar main title styling */
 .navbar-title {
-    margin: 0;
-    font-size: 24px;
-    color: orangered;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
 }
 
+/* Navbar subtitle styling */
 .navbar-subtitle {
-    margin: 0;
-    font-size: 16px;
-    color: black;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin: 0;
+  color: #cccccc; /* Light gray for the subtitle */
 }
 
-.navbar .profile {
-    width: 40px;
+/* Button styling */
+button {
+  font-family: inherit;
+  background-color: #4a5568; /* Gray button background */
+  color: #ffffff; /* White text */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px; /* Fully rounded button */
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.login-conditon {
-    font-size: 20px;
+/* Button hover state */
+button:hover {
+  background-color: #2d3748; /* Darker gray on hover */
+}
+
+/* Profile image styling (if used) */
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Ensure the image fits well */
+  margin-left: 1rem;
+  cursor: pointer;
 }
