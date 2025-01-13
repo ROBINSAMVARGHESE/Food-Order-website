@@ -127,4 +127,29 @@ const registerAdminUser = async (req, res) => {
   }
 };
 
-export { loginUser, registerUser, loginAdminUser, registerAdminUser };
+// update user profile
+const updateUserProfile = async (req, res) => {
+  const { id } = req.params;
+  const { name, email } = req.body;
+  try {
+    const user = await userModel.findById(id);
+    if (!user) {
+      return res.json({ success: false, message: "User not found" });
+    }
+
+    if (email && !validator.isEmail(email)) {
+      return res.json({ success: false, message: "Please enter a valid E-mail" });
+    }
+
+    user.name = name || user.name;
+    user.email = email || user.email;
+
+    const updatedUser = await user.save();
+    res.json({ success: true, user: updatedUser });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error" });
+  }
+};
+
+export { loginUser, registerUser, loginAdminUser, registerAdminUser, updateUserProfile };

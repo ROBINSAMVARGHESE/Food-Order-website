@@ -1,6 +1,6 @@
 /* Navbar styles */
-.navbar{
-    padding: 20px 0px;
+.navbar {
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +62,7 @@
     min-width: 10px;
     min-height: 10px;
     background-color: orangered;
-    border-radius: 5px;
+    border-radius: 50%;
     top: -8px;
     right: -8px;
 }
@@ -98,10 +98,6 @@
     display: none;
     left: 0;
     z-index: 1;
-}
-
-.navbar-profile:hover .nav-profile-dropdown {
-    display: flex;
     flex-direction: column;
     gap: 10px;
     background-color: #fff2ef;
@@ -111,18 +107,95 @@
     outline: 2px solid white;
     list-style: none;
 }
-.nav-profile-dropdown li{
+
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+}
+
+.nav-profile-dropdown li {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    font-size: 1rem;
+    color: #49557e;
+    transition: 0.3s;
 }
-.nav-profile-dropdown img{
-    width: 30px;
 
+.nav-profile-dropdown img {
+    width: 30px;
+    height: 30px;
 }
-.nav-profile-dropdown li:hover{
-color: orangered;
+
+.nav-profile-dropdown li:hover {
+    color: orangered;
+}
+
+/* Profile Section (Avatar and Details) */
+.profile-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.profile-section {
+    margin-bottom: 10px;
+    text-align: center; 
+}
+
+.profile-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+.profile-section label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #49557e;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Fields (Only Name, Email, and Password) */
+.profile-section input[type="text"],
+.profile-section input[type="email"],
+.profile-section input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: left; /* Align text to the left */
+}
+
+/* Specific margin adjustment for password input */
+.profile-section input[name="password"] {
+    margin-bottom: 15px; /* Extra space below the password input */
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: #ff7043;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #e65c35;
 }
 
 /* Responsive Design */

@@ -147,8 +147,3 @@ const StoreContextProvider = ({ children }) => {
 };
 
 export default StoreContextProvider;
-
-
-
-
-
