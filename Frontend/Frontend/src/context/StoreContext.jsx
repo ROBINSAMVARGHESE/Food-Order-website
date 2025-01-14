@@ -8,10 +8,9 @@ const StoreContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState({});
     const [food_list, setFoodList] = useState([]);
     const [token, setToken] = useState("");
+    const [userDetails, setUserDetails] = useState(null);
 
     // Backend Base URL
-    
-    // const url = "https://food-order-website-mzss.onrender.com";
     const url = import.meta.env.VITE_URL;
     console.log(url);
 
@@ -95,6 +94,18 @@ const StoreContextProvider = ({ children }) => {
         }
     };
 
+    // Fetch User Details
+    const fetchUserDetails = async (userToken) => {
+        try {
+            const response = await axios.get(`${url}/api/user/profile`, {
+                headers: { Authorization: `Bearer ${userToken}` },
+            });
+            setUserDetails(response.data.user);
+        } catch (error) {
+            console.error("Error fetching user details:", error);
+        }
+    };
+
     // Calculate Total Cart Amount
     const getTotalCartAmount = () => {
         let totalAmount = 0;
@@ -119,6 +130,7 @@ const StoreContextProvider = ({ children }) => {
                 if (storedToken) {
                     setToken(storedToken);
                     await loadCartData(storedToken);
+                    await fetchUserDetails(storedToken);
                 }
             } catch (error) {
                 console.error("Error loading initial data:", error);
@@ -137,6 +149,8 @@ const StoreContextProvider = ({ children }) => {
         url,
         token,
         setToken,
+        userDetails,
+        setUserDetails,
     };
 
     return (
